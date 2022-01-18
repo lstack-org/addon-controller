@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: lsh-cluster-addon-controller
+  name: lsh-cluster-addon-controller
+  namespace: lstack-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lsh-cluster-addon-controller
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: lsh-cluster-addon-controller
+    spec:
+      containers:
+        - image: registry.cn-hangzhou.aliyuncs.com/launcher-agent-only-test/lsh-cluster-addon-controller:v100r001c02b014
+          name: lsh-cluster-addon-controller
+          resources: {}
+      serviceAccountName: addon-controller
+      tolerations:
+        - operator: Exists
