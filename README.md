@@ -1,2 +1,1 @@
-# lsh-cluster-addon-controller 
-
+# addon-controller
