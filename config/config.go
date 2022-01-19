@@ -6,6 +6,7 @@ import (
 	clientset "k8s.io/client-go/kubernetes"
 	restclient "k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/record"
+	"time"
 )
 
 type Config struct {
@@ -18,10 +19,11 @@ type Config struct {
 	Kubeconfig *restclient.Config
 
 	// the event sink
-	EventRecorder  record.EventRecorder
-	SecureServing  *apiserver.SecureServingInfo
-	Authentication apiserver.AuthenticationInfo
-	Authorization  apiserver.AuthorizationInfo
+	EventRecorder   record.EventRecorder
+	SecureServing   *apiserver.SecureServingInfo
+	Authentication  apiserver.AuthenticationInfo
+	Authorization   apiserver.AuthorizationInfo
+	InformerRefresh time.Duration
 }
 
 // LeaderElectionConfiguration defines the configuration of leader election
