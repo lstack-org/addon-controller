@@ -1,0 +1,20 @@
+.idea/
+.DS_Store
+
+runtime/*
+!runtime/qrcode/bg.jpg
+!runtime/fonts
+
+vendor/
+bin/
+
+# test file
+coverprofile.cov
+coverprofile.txt
+e2e/junit.xml
+
+node_modules/
+package-lock.json
+go.sum
+
+/go_build_idp_base_cmd_http
